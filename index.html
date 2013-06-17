@@ -28,8 +28,31 @@
     <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
   </div>
 
-  <script id="item-template" type="text/x-handlebars-template"></script>
-  <script id="stats-template" type="text/x-handlebars-template"></script>
+  <script id="item-template" type="text/x-handlebars-template">
+    <div class="view">
+      <input class="toggle" type="checkbox"
+        {{#if completed }}
+          'checked'
+        {{else}}
+          ''
+        {{/if}}
+       >
+       <label>{{title}}</label>
+       <button class="destroy"></button>
+     </div>
+     <input class="edit" value="{{title}}">
+  </script>
+  <script id="stats-template" type="text/x-handlebars-template">
+    <span id="todo-count">
+      <strong>{{remaining}}</strong> 
+      {{#if remaining == 1}}
+        'item'
+      {{else}}
+        'items'
+      {{/if}}
+      left
+    </span>
+  </script>
   <script type="js/lib/jquery.min.js"></script>
   <script type="js/lib/underscore.js"></script>
   <script type="js/lib/backbone-min.js"></script>
