@@ -4,7 +4,7 @@ app.AppView = Backbone.View.extend({
 
   el: '#todoapp',
 
-  statsTemplate: Handlebars.compile( $('#stats-template').html() ),
+  statsTemplate: _.template( $('#stats-template').html() ),
 
   events: {
     'keypress #new-todo': 'createOnEnter',
