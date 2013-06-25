@@ -42,7 +42,7 @@ app.TodoView = Backbone.View.extend({
     );
   },
 
-  toggleCompleted: function(){
+  togglecompleted: function(){
     this.model.toggle();
   },
 
